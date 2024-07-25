@@ -1,12 +1,31 @@
 <template>
   <div class="home">
     <div>
-      <button class="btn minus">-</button>
-      <span class="counter">0</span>
-      <button class="btn plus">+</button>
+      <button class="btn minus" @click="decreaseCounter">-</button>
+      <span class="counter"> {{ counter }} </span>
+      <button class="btn plus" @click="increaseCounter">+</button>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+  methods: {
+    increaseCounter() {
+      this.counter++;
+    },
+    decreaseCounter() {
+      if (this.counter > 0) this.counter--;
+    },
+  },
+};
+</script>
+
 
 
 <style scoped>

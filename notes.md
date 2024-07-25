@@ -143,4 +143,30 @@ export default {
 </script>
 ```
 
--
+- While using _reactive_ , we dont need to write the value, we say
+
+```js
+<script setup>
+import { reactive } from "vue";
+
+const dataCount = reactive({
+  count: 0,
+  title: "my counter title",
+});
+
+const increaseCounter = () => {
+  dataCount.count++;
+};
+
+const decreaseCounter = () => {
+  dataCount.count--;
+};
+
+</script>
+
+
+```
+
+
+
+- 

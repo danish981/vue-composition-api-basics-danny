@@ -123,4 +123,24 @@ import * as Form from './form-components'
 </template>
 ```
 
+- The two ways of writing composition API code vuejs APP
+
+```js
+
+// we can write the composition API code like this
+<script>
+export default {
+  setup() {
+
+  }
+}
+</script>
+
+
+// but the actual and nicer and superior way is
+<script setup>
+
+</script>
+```
+
 -

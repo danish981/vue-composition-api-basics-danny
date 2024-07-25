@@ -8,7 +8,21 @@
   </div>
 </template>
 
-<script>
+
+
+
+<script setup>
+import { ref } from "vue";
+const counter = ref(0);
+</script>
+
+
+
+
+
+
+<!-- USING THE CLASSIC COMPOSITION API PATTERN  -->
+<!-- <script>
 import { ref } from "vue";
 export default {
   setup() {
@@ -29,11 +43,13 @@ export default {
     };
   },
 };
-</script>
+</script> -->
 
 
 
 
+
+<!-- USING THE OPTIONS API -->
 <!-- <script>
 export default {
   data() {

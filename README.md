@@ -2,6 +2,6 @@
 
 ## Danny | Udemy Course videos
 
-### Current Chapter - 02 | Getting started
+### Current Chapter - 03 | Options API and Composition API
 
-Video : 003 Project setup
+Video : 004 Options API Design

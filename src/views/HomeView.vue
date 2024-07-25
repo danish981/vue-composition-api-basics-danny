@@ -10,10 +10,19 @@
 
 
 
-
+<!-- USING THE MODERN WAY OF COMPOSITION API - SCRIPT SETUP STYLE -->
 <script setup>
 import { ref } from "vue";
 const counter = ref(0);
+
+const increaseCounter = () => {
+  counter.value++;
+};
+
+const decreaseCounter = () => {
+  if (counter.value > 0) counter.value--;
+};
+
 </script>
 
 

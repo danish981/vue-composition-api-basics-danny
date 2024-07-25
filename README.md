@@ -323,6 +323,20 @@ onUpdated(() => {
 
 - we can use hooks on specific property , variable like what happen to the particular value if the component is mounted etc , read docs
 
+- custom direcities, we can create our own and use them in our code and use with life cycle hooks, for example this directive will highlight and focus the element where it is used and gain focus when the component is mounted 
+
+```js
+
+<input type="text" v-autofocus/>
+
+const vAutofocus = {
+  mounted : (el) => {
+    el.focus()
+  }
+}
+
+```
+
 - 
 
 

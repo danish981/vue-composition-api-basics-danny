@@ -18,7 +18,7 @@
 
     <section class="title-edit">
       <label for="">Edit counter title</label>
-      <input type="text" v-model="dataCount.title" />
+      <input type="text" v-model="dataCount.title" v-autofocus/>
     </section>
   </div>
 </template>
@@ -54,6 +54,15 @@ const increaseCounter = (amount) => {
 const decreaseCounter = (amount) => {
   dataCount.count -= amount;
 };
+
+
+const vAutofocus = {
+  mounted : (el) => {
+    el.focus()
+  }
+}
+
+
 </script>
 
 <style scoped>

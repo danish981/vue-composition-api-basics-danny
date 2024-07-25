@@ -8,15 +8,27 @@
   </div>
 </template>
 
-
-
-<!-- there are two patterns to write the code in composition API -->
 <script>
+import { ref } from "vue";
 export default {
   setup() {
+    const counter = ref(90);
 
-  }
-}
+    const increaseCounter = () => {
+      counter.value++;
+    };
+
+    const decreaseCounter = () => {
+      if (counter.value > 0) counter.value--;
+    };
+
+    return {
+      counter,
+      increaseCounter,
+      decreaseCounter,
+    };
+  },
+};
 </script>
 
 

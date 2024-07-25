@@ -259,4 +259,6 @@ Destructuring is a powerful feature in JavaScript that can simplify your code an
 
 
 
+- computer property use a reactive value, it cached,  and updates when dependency is changed, it works only with the reactive data, it takes get and set if it needs to use something to get and set , but set is used rarely, see the docs https://vuejs.org/guide/essentials/computed.html#computed-properties
+
 - 

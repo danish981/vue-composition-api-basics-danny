@@ -1,5 +1,5 @@
 ## Danny | Udemy Course videos
 
-### Current Chapter - 05 | Methods, computed and watch
+### Current Chapter - 06 : Lifecycle Hooks
 
-Video : 001 : Methods
+Video : 001 : Mounted Hooks

@@ -290,4 +290,6 @@ watch(
 );
 ```
 
--
+- Lifecycle hooks like `mounted()` and `unmounted()` are the event names when triggered and we perform some action, see docs https://vuejs.org/api/composition-api-lifecycle.html#onmounted
+
+

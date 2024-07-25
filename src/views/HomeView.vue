@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { computed, reactive, watch } from "vue";
+import { computed, onBeforeMount, onMounted, onUnmounted, reactive, watch } from "vue";
 
 const appTitle = "The Application Title";
 
@@ -34,12 +34,9 @@ const dataCount = reactive({
 });
 
 watch(() => dataCount.count , (newCount, oldCount) => {
-
   if (newCount == 20) {
     alert('YOu are good to go, the current count is ' + newCount )
   }
-
-
 });
 
 
@@ -55,6 +52,21 @@ const increaseCounter = (amount) => {
 const decreaseCounter = (amount) => {
   dataCount.count -= amount;
 };
+
+
+onMounted(() => {
+  console.log('component mounted')
+})
+
+onUnmounted(() => {
+  console.log('component unmounted')
+})
+
+onBeforeMount(() => {
+  console.log('component is not mounted yet, onBeforeMOunt')
+})
+
+
 </script>
 
 <style scoped>

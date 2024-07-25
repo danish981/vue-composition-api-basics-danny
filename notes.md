@@ -167,6 +167,16 @@ const decreaseCounter = () => {
 
 ```
 
+- we can also write the same method like
 
+```js
+const increaseCounter = (amount) => {
+  dataCount.count += amount;
+};
+
+const increaseCounter = amount => {
+  dataCount.count += amount;
+};
+```
 
 - 

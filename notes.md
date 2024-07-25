@@ -99,4 +99,28 @@ export default {
 
 ```
 
+- refs returned from setup are automatically shallow unwrapped when accessed in the template so you do not need to use ._value_ when accessing them
+
+- Think of MyComponent as being referenced as a variable. If you have used JSX, the mental model is similar here. The kebab-case equivalent `<my-component>` also works in the template - however PascalCase component tags are strongly recommended for consistency. It also helps differentiating from native custom elements.
+
+- If you have a named import that conflicts with the component's inferred name, you can alias the import:
+
+```js
+import { FooBar as FooBarChild } from "./components";
+```
+
+- **Namespaced Components** : You can use component tags with dots like `<Foo.Bar>` to refer to components nested under object properties. This is useful when you import multiple components from a single file:
+
+```js
+<script setup>
+import * as Form from './form-components'
+</script>
+
+<template>
+  <Form.Input>
+    <Form.Label>label</Form.Label>
+  </Form.Input>
+</template>
+```
+
 -

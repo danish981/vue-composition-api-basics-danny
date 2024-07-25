@@ -292,4 +292,21 @@ watch(
 
 - Lifecycle hooks like `mounted()` and `unmounted()` are the event names when triggered and we perform some action, see docs https://vuejs.org/api/composition-api-lifecycle.html#onmounted
 
+- activated and deactivated hooks - keep alive caches the components
 
+  https://vuejs.org/api/composition-api-lifecycle.html#onactivated
+  https://vuejs.org/api/built-in-components.html#keepalive
+
+- hooks fired just and after the data is updated on the component
+
+```js
+onBeforeUpdate(() => {
+  console.log("onbeforeupdate");
+});
+
+onUpdated(() => {
+  console.log("onupdated");
+});
+```
+
+- 

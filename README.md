@@ -2,4 +2,4 @@
 
 ### Current Chapter - 06 : Lifecycle Hooks
 
-Video : 001 : Mounted Hooks
+Video : 004 : Multiple Hooks

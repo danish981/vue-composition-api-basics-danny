@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { computed, onBeforeMount, onMounted, onUnmounted, reactive, watch } from "vue";
+import { computed, onActivated, onBeforeMount, onBeforeUpdate, onDeactivated, onMounted, onUnmounted, onUpdated, reactive, watch } from "vue";
 
 const appTitle = "The Application Title";
 
@@ -65,6 +65,29 @@ onUnmounted(() => {
 onBeforeMount(() => {
   console.log('component is not mounted yet, onBeforeMOunt')
 })
+
+
+// activated when the component is cached under keep-alive 
+
+onActivated(() => {
+  console.log('activated')
+})
+
+onDeactivated(() => {
+  console.log('deactivated')
+})
+
+
+onBeforeUpdate(() => {
+  console.log('onbeforeupdate')
+})
+
+
+onUpdated(() => {
+  console.log('onupdated')
+})
+
+
 
 
 </script>

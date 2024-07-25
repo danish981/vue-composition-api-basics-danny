@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -7,7 +6,23 @@
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
   </nav>
+
   <RouterView />
+
+
+  <!-- https://vuejs.org/api/composition-api-lifecycle.html#onactivated -->
+   <!-- https://vuejs.org/api/built-in-components.html#keepalive -->
+  <!-- the newer way : modern -->
+  <!-- <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
+  </router-view> -->
+
+  <!-- the older way | depricated -->
+  <!-- <keep-alive>
+    <RouterView />
+  </keep-alive> -->
 </template>
 
 <style scoped>
@@ -45,5 +60,4 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
-
 </style>

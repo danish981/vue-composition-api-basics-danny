@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { computed, reactive } from "vue";
+import { computed, reactive, watch } from "vue";
 
 const appTitle = "The Application Title";
 
@@ -32,6 +32,16 @@ const dataCount = reactive({
   count: 0,
   title: "My Counter Title",
 });
+
+watch(() => dataCount.count , (newCount, oldCount) => {
+
+  if (newCount == 20) {
+    alert('YOu are good to go, the current count is ' + newCount )
+  }
+
+
+});
+
 
 const evenOrOdd = computed(() => {
   if (dataCount.count % 2 === 0) return 'Even' 

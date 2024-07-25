@@ -257,8 +257,37 @@ In this example, we specify a default value of 25 for the age property. Since th
 
 Destructuring is a powerful feature in JavaScript that can simplify your code and make it more expressive. It's widely used in modern JavaScript development.
 
+- computer property use a reactive value, it cached, and updates when dependency is changed, it works only with the reactive data, it takes get and set if it needs to use something to get and set , but set is used rarely, see the docs https://vuejs.org/guide/essentials/computed.html#computed-properties
 
+- with the _watch_, we cannot use the reactive property defined with _reactive_ directly, but we do with a getter , this is how we can watch for a value in the reactive value, so because it is _reactive()_ property we are doing the getter typed syntax, otherwise we can directly use the state defined with _ref_
 
-- computer property use a reactive value, it cached,  and updates when dependency is changed, it works only with the reactive data, it takes get and set if it needs to use something to get and set , but set is used rarely, see the docs https://vuejs.org/guide/essentials/computed.html#computed-properties
+```js
+const dataCount = reactive({
+  count: 0,
+  title: "My Counter Title",
+});
 
-- 
+watch(
+  () => dataCount.count,
+  (newCount, oldCount) => {
+    console.log(newCount, oldCount);
+  }
+);
+```
+
+and
+
+```js
+// like here, oldCount is not used, so we can remove it
+// these both params hold the new and old value
+watch(
+  () => dataCount.count,
+  (newCount, oldCount) => {
+    if (newCount == 20) {
+      alert("YOu are good to go, the current count is " + newCount);
+    }
+  }
+);
+```
+
+-

@@ -1,5 +1,5 @@
 ## Danny | Udemy Course videos
 
-### Current Chapter - 03 | Options API and Composition API
+### Current Chapter - 04 | Refs - Reactive Objects and non-reactive objects
 
-Video : 005 Script setup | An easier way 
+Video : 001 : Refs

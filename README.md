@@ -4,4 +4,4 @@
 
 ### Current Chapter - 03 | Options API and Composition API
 
-Video : 002 Options API Design
+Video : 003 Converting the same app in Compostion API

@@ -8,7 +8,21 @@
   </div>
 </template>
 
+
+
+<!-- there are two patterns to write the code in composition API -->
 <script>
+export default {
+  setup() {
+
+  }
+}
+</script>
+
+
+
+
+<!-- <script>
 export default {
   data() {
     return {
@@ -24,7 +38,7 @@ export default {
     },
   },
 };
-</script>
+</script> -->
 
 
 

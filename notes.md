@@ -174,9 +174,89 @@ const increaseCounter = (amount) => {
   dataCount.count += amount;
 };
 
-const increaseCounter = amount => {
+const increaseCounter = (amount) => {
   dataCount.count += amount;
 };
 ```
+
+- In JavaScript, destructuring is a syntax feature that allows you to extract values from arrays or objects and assign them to separate variables. It's a concise way to unpack values from a data structure and use them individually.
+
+**Array Destructuring**
+
+Let's start with an example of array destructuring:
+
+```js
+const colors = ["red", "green", "blue"];
+
+const [firstColor, secondColor, thirdColor] = colors;
+
+console.log(firstColor); // "red"
+console.log(secondColor); // "green"
+console.log(thirdColor); // "blue"
+```
+
+In this example, we have an array colors with three elements. We use the destructuring syntax [firstColor, secondColor, thirdColor] to extract the values from the array and assign them to separate variables. The variables are assigned in the order they appear in the array.
+
+Object Destructuring
+
+Now, let's look at an example of object destructuring:
+
+```js
+const person = { name: "John", age: 30, occupation: "Developer" };
+
+const { name, age } = person;
+
+console.log(name); // "John"
+console.log(age); // 30
+```
+
+In this example, we have an object person with three properties. We use the destructuring syntax { name, age } to extract the values of the name and age properties and assign them to separate variables.
+
+Nested Destructuring
+
+You can also use destructuring with nested data structures:
+
+```js
+const address = {
+  street: "123 Main St",
+  city: "Anytown",
+  state: "CA",
+  zip: "12345",
+  coordinates: {
+    lat: 37.7749,
+    lng: -122.4194,
+  },
+};
+
+const {
+  street,
+  coordinates: { lat, lng },
+} = address;
+
+console.log(street); // "123 Main St"
+console.log(lat); // 37.7749
+console.log(lng); // -122.4194
+```
+
+In this example, we have an object address with a nested coordinates object. We use destructuring to extract the street property and the lat and lng properties from the coordinates object.
+
+Default Values
+
+You can also specify default values in case the property doesn't exist in the data structure:
+
+```js
+const person = { name: "John" };
+
+const { name, age = 25 } = person;
+
+console.log(name); // "John"
+console.log(age); // 25
+```
+
+In this example, we specify a default value of 25 for the age property. Since the age property doesn't exist in the person object, the default value is used.
+
+Destructuring is a powerful feature in JavaScript that can simplify your code and make it more expressive. It's widely used in modern JavaScript development.
+
+
 
 - 

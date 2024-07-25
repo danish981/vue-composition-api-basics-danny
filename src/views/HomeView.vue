@@ -7,11 +7,11 @@
     <section class="counter-section">
       <h2>{{ dataCount.title }} :</h2>
       <div class="counter-controls">
-        <button class="btn btn-minus" @click="decreaseCounter(2)"> -- </button>
-        <button class="btn btn-minus" @click="decreaseCounter(1)"> - </button>
+        <button class="btn btn-minus" @click="decreaseCounter(2)">--</button>
+        <button class="btn btn-minus" @click="decreaseCounter(1)">-</button>
         <span class="counter">{{ dataCount.count }}</span>
-        <button class="btn btn-plus" @click="increaseCounter(1)"> + </button>
-        <button class="btn btn-plus" @click="increaseCounter(2)"> ++ </button>
+        <button class="btn btn-plus" @click="increaseCounter(1)">+</button>
+        <button class="btn btn-plus" @click="increaseCounter(2)">++</button>
       </div>
       <h5 class="counter-status">{{ evenOrOdd }}</h5>
     </section>
@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { computed, onActivated, onBeforeMount, onBeforeUpdate, onDeactivated, onMounted, onUnmounted, onUpdated, reactive, watch } from "vue";
+import { computed, reactive, watch } from "vue";
 
 const appTitle = "The Application Title";
 
@@ -33,16 +33,18 @@ const dataCount = reactive({
   title: "My Counter Title",
 });
 
-watch(() => dataCount.count , (newCount, oldCount) => {
-  if (newCount == 20) {
-    alert('YOu are good to go, the current count is ' + newCount )
+watch(
+  () => dataCount.count,
+  (newCount, oldCount) => {
+    if (newCount == 20) {
+      alert("YOu are good to go, the current count is " + newCount);
+    }
   }
-});
-
+);
 
 const evenOrOdd = computed(() => {
-  if (dataCount.count % 2 === 0) return 'Even' 
-  return 'Odd'
+  if (dataCount.count % 2 === 0) return "Even";
+  return "Odd";
 });
 
 const increaseCounter = (amount) => {
@@ -52,44 +54,6 @@ const increaseCounter = (amount) => {
 const decreaseCounter = (amount) => {
   dataCount.count -= amount;
 };
-
-
-onMounted(() => {
-  console.log('component mounted')
-})
-
-onUnmounted(() => {
-  console.log('component unmounted')
-})
-
-onBeforeMount(() => {
-  console.log('component is not mounted yet, onBeforeMOunt')
-})
-
-
-// activated when the component is cached under keep-alive 
-
-onActivated(() => {
-  console.log('activated')
-})
-
-onDeactivated(() => {
-  console.log('deactivated')
-})
-
-
-onBeforeUpdate(() => {
-  console.log('onbeforeupdate')
-})
-
-
-onUpdated(() => {
-  console.log('onupdated')
-})
-
-
-
-
 </script>
 
 <style scoped>

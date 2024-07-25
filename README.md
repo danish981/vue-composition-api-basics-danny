@@ -337,7 +337,7 @@ const vAutofocus = {
 };
 ```
 
-- this is how we can create a custom js file and import it and use the funcitons inside of this
+- this is how we can create a custom js file and import it and use the funcitons inside of this, **MADE A GLOBAL CUSTOM DIRECTIVE**
 
 
 ```js

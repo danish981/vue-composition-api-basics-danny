@@ -2,13 +2,15 @@
 
 ### Current Chapter - 07 : Directives
 
-Video : 001
+Video : 002 : Vuejs Own directives
 
----------------------------------------------------------------------
----------------------------------------------------------------------
----------------------------------------------------------------------
+---
 
-### NOTES 
+---
+
+---
+
+### NOTES
 
 - there are two ways we can make the properties reactive, by using _reactive_ and _ref_
 - **reactive** can be used to make an object and its underlying things reactive
@@ -323,20 +325,36 @@ onUpdated(() => {
 
 - we can use hooks on specific property , variable like what happen to the particular value if the component is mounted etc , read docs
 
-- custom direcities, we can create our own and use them in our code and use with life cycle hooks, for example this directive will highlight and focus the element where it is used and gain focus when the component is mounted 
+- custom direcities, we can create our own and use them in our code and use with life cycle hooks, for example this directive will highlight and focus the element where it is used and gain focus when the component is mounted
+
+```js
+<input type="text" v-autofocus />;
+
+const vAutofocus = {
+  mounted: (el) => {
+    el.focus();
+  },
+};
+```
+
+- this is how we can create a custom js file and import it and use the funcitons inside of this
+
 
 ```js
 
-<input type="text" v-autofocus/>
+// the use in template
+<input type="text" v-model="dataCount.title" v-autofocus />
 
-const vAutofocus = {
-  mounted : (el) => {
+
+// the import
+import { vAutofocus } from "@/directives/vAutofocus";
+
+// the code inside of a file
+export const vAutofocus = {
+  mounted: (el) => {
     el.focus()
   }
 }
 
+
 ```
-
-- 
-
-

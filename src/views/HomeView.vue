@@ -18,13 +18,14 @@
 
     <section class="title-edit">
       <label for="">Edit counter title</label>
-      <input type="text" v-model="dataCount.title" v-autofocus/>
+      <input type="text" v-model="dataCount.title" v-autofocus />
     </section>
   </div>
 </template>
 
 <script setup>
 import { computed, reactive, watch } from "vue";
+import { vAutofocus } from "@/directives/vAutofocus";
 
 const appTitle = "The Application Title";
 
@@ -54,15 +55,6 @@ const increaseCounter = (amount) => {
 const decreaseCounter = (amount) => {
   dataCount.count -= amount;
 };
-
-
-const vAutofocus = {
-  mounted : (el) => {
-    el.focus()
-  }
-}
-
-
 </script>
 
 <style scoped>

@@ -1,8 +1,8 @@
 ## Danny | Udemy Course videos
 
-### Current Chapter - 07 : Directives
+### Current Chapter - 08 : VUE ROUTER
 
-Video : 002 : Vuejs Own directives
+Video : 001
 
 ---
 

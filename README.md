@@ -436,3 +436,113 @@ console.log(sum); // Output: 15
 These methods can be chained together to perform complex transformations on arrays in a clean and readable way.
 
 
+
+## Array destructuring 
+
+Destructuring in JavaScript is a convenient way to extract values from arrays or properties from objects into distinct variables. It provides a concise syntax to unpack data from arrays or objects into individual variables.
+
+### 1. **Array Destructuring**
+Array destructuring allows you to unpack elements from an array into individual variables based on their position.
+
+#### **Syntax:**
+```javascript
+const [variable1, variable2, ...rest] = array;
+```
+
+#### **Example:**
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+const [first, second] = numbers;
+console.log(first);  // Output: 1
+console.log(second); // Output: 2
+
+const [one, , three] = numbers;
+console.log(three);  // Output: 3
+
+// Using rest parameter
+const [firstNumber, ...restNumbers] = numbers;
+console.log(restNumbers); // Output: [2, 3, 4, 5]
+```
+
+### 2. **Object Destructuring**
+Object destructuring allows you to extract properties from an object into variables with matching names.
+
+#### **Syntax:**
+```javascript
+const { key1, key2, ...rest } = object;
+```
+
+#### **Example:**
+```javascript
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
+
+const { name, age } = person;
+console.log(name); // Output: John
+console.log(age);  // Output: 30
+
+// Using rest parameter
+const { name: personName, ...otherDetails } = person;
+console.log(personName);  // Output: John
+console.log(otherDetails); // Output: { age: 30, city: 'New York' }
+```
+
+### 3. **Default Values**
+You can provide default values when destructuring. This is useful if the array or object doesn’t have the value you’re trying to destructure.
+
+#### **Example:**
+```javascript
+const [a = 1, b = 2] = [10];
+console.log(a); // Output: 10
+console.log(b); // Output: 2
+
+const { x = 5, y = 10 } = { x: 20 };
+console.log(x); // Output: 20
+console.log(y); // Output: 10
+```
+
+### 4. **Nested Destructuring**
+You can destructure nested objects or arrays by following the structure of the data.
+
+#### **Example:**
+```javascript
+const person = {
+  name: 'John',
+  address: {
+    city: 'New York',
+    zip: '10001'
+  }
+};
+
+const { name, address: { city, zip } } = person;
+console.log(city); // Output: New York
+console.log(zip);  // Output: 10001
+```
+
+### 5. **Function Parameters Destructuring**
+You can also use destructuring in function parameters to directly access properties or elements passed into the function.
+
+#### **Example:**
+```javascript
+function printPerson({ name, age }) {
+  console.log(`Name: ${name}, Age: ${age}`);
+}
+
+const person = { name: 'Alice', age: 25 };
+printPerson(person); // Output: Name: Alice, Age: 25
+
+function sum([a, b]) {
+  return a + b;
+}
+
+console.log(sum([1, 2])); // Output: 3
+```
+
+### **Summary:**
+Destructuring is a powerful feature that simplifies code by allowing you to unpack values from arrays or properties from objects into distinct variables. It is particularly useful when dealing with data structures where you need to extract specific values or properties.
+
+

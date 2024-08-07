@@ -358,3 +358,81 @@ export const vAutofocus = {
 
 
 ```
+
+
+### Higher order function 
+
+In JavaScript, `filter`, `map`, and `reduce` are higher-order functions that operate on arrays. They are part of the array prototype and are widely used for functional programming. Here's an overview of each:
+
+### 1. **`filter` Method**
+The `filter` method creates a new array with all elements that pass the test implemented by the provided function.
+
+#### **Syntax:**
+```javascript
+const newArray = array.filter(callback(element[, index[, array]])[, thisArg]);
+```
+
+- **`callback`**: A function that is called for every element of the array. If it returns `true`, the element is kept; otherwise, it is removed.
+- **`element`**: The current element being processed.
+- **`index`**: (Optional) The index of the current element being processed.
+- **`array`**: (Optional) The array `filter` was called upon.
+- **`thisArg`**: (Optional) Value to use as `this` when executing `callback`.
+
+#### **Example:**
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(number => number % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4, 6]
+```
+
+### 2. **`map` Method**
+The `map` method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+#### **Syntax:**
+```javascript
+const newArray = array.map(callback(element[, index[, array]])[, thisArg]);
+```
+
+- **`callback`**: A function that is called for every element of the array. It produces a new element for the new array.
+- **`element`**: The current element being processed.
+- **`index`**: (Optional) The index of the current element being processed.
+- **`array`**: (Optional) The array `map` was called upon.
+- **`thisArg`**: (Optional) Value to use as `this` when executing `callback`.
+
+#### **Example:**
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const squaredNumbers = numbers.map(number => number * number);
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+```
+
+### 3. **`reduce` Method**
+The `reduce` method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+
+#### **Syntax:**
+```javascript
+const result = array.reduce(callback(accumulator, currentValue[, index[, array]]), initialValue);
+```
+
+- **`callback`**: A function that is executed on each element of the array, taking four arguments:
+  - **`accumulator`**: Accumulates the callback's return values. It is the accumulated value previously returned in the last invocation of the callback, or `initialValue`, if supplied.
+  - **`currentValue`**: The current element being processed.
+  - **`index`**: (Optional) The index of the current element being processed.
+  - **`array`**: (Optional) The array `reduce` was called upon.
+- **`initialValue`**: (Optional) A value to use as the first argument to the first call of the callback. If no initial value is supplied, the first element in the array will be used and skipped in the iteration.
+
+#### **Example:**
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum); // Output: 15
+```
+
+### **Summary:**
+- **`filter`**: Use it to filter out elements that do not satisfy a condition.
+- **`map`**: Use it to transform each element in the array.
+- **`reduce`**: Use it to accumulate all elements of the array into a single result.
+
+These methods can be chained together to perform complex transformations on arrays in a clean and readable way.
+
+

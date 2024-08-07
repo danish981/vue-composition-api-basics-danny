@@ -37,7 +37,7 @@ const dataCount = reactive({
 watch(
   () => dataCount.count,
   (newCount, oldCount) => {
-    if (newCount == 20) {
+    if (newCount === 20) {
       alert("YOu are good to go, the current count is " + newCount);
     }
   }
